@@ -22,13 +22,13 @@ My anotations about ansible
 
 Before we get into the important Ansible commands, first, let's understand its basic terminology.
 
-Server: An entity that provides service for our Ansible
+- Server: An entity that provides service for our Ansible
 
-Machine: A physical machine, a VM, or a container Target machine: An end machine to be configured by Ansible
+- Machine: A physical machine, a VM, or a container Target machine: An end machine to be configured by Ansible
 
-Task: An action
+- Task: An action
 
-Playbook: A location where YAML files are written and executed YAML
+- Playbook: A location where YAML files are written and executed YAML
 
 As mentioned earlier, YAML (Yet Another Markup Language) is a human-readable programming language. YAML syntax is used to express the Ansible playbooks.
 
