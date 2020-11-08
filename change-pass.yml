@@ -1,5 +1,5 @@
 ---
-- hosts: rhce
+- hosts: jbosseap
   become: yes
   tasks:
   vars_files:
