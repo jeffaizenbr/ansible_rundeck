@@ -1,0 +1,22 @@
+
+---
+# Instala Zabbi-Agent 4.2
+
+- hosts: TEST
+
+  tasks:
+
+    - file:
+        path: /tmp/so.txt /tmp/so.sh
+        state: absent
+
+    - copy:
+        src: /tmp/so.sh
+        dest: /root
+        mode: o=x
+
+    - script: '/tmp/so.sh'
+
+    - file:
+        path: /tmp/so.sh
+        state: absent
