@@ -30,6 +30,7 @@ O endereço das interfaces pública e de gerenciamento serão alteradas pela var
 Example Playbook
 ----------------
 
+```yml
 ---
 - name: Instalacao do Wildfly 21.0.1
 - hosts: webapp
@@ -37,7 +38,7 @@ Example Playbook
   roles:
     - isweluiz.wildfly-install
 ...
-
+```
 
 License
 -------
@@ -48,5 +49,7 @@ Author Information
 ------------------
 
 Autor: Luiz Eduardo
+
 Blog: blog.isweluiz.com.br
+
 Linkedin: https://www.linkedin.com/in/isweluiz/
