@@ -13,13 +13,17 @@ Role Variables
 
 This variables is defined on vars/main.yml, for view the file enter:
 
+```bash
 $ ansible-vault view roles/create-user.le/vars/main.yml --vault-password-file=secret
+```
 
 For edit file, include and or remove users and passwords, enter:
 
+```bash
 $ ansible-vault edit roles/create-user.le/vars/main.yml --vault-password-file=secret
+```
 
-
+```yaml
 users:
     - name: luiz.pereira
       comment: "Linux/Aplicacao"
@@ -27,7 +31,7 @@ users:
       shell: /bin/bash
       group: wheel
       job: App
-#     groups: wheel,linux ...
+#      groups: wheel,linux
 
     - name: joao.delax
       comment: "Dev"
@@ -42,6 +46,7 @@ users:
       shell: /bin/false
       group: wheel
       job:
+```
 
 Dependencies
 ------------
@@ -53,7 +58,7 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-## The files file is encrypted with the vault
+### The files file is encrypted with the vault
 
 ```bash
 [sandy@ip-172-31-36-157 ansible]$ cat roles/create-user.le/vars/main.yml 
@@ -65,6 +70,8 @@ $ANSIBLE_VAULT;1.1;AES256
 
 $ ansible-playbook users.yml --vault-password-file=secret
 
+
+```yaml
 ---
 - name: Create new users 
   hosts: all
@@ -73,24 +80,27 @@ $ ansible-playbook users.yml --vault-password-file=secret
   roles:
     - create-user.le
 ...
+```
 
 
 Or, you can select specific groups for create the users
 
+```yaml
 ---
 - name: Create new users
   hosts: all
   become: true
   serial: 20
   tasks:
-		- include_role:
-				name: create-user.le
-			when: inventory_hostname['dev'] and item.job == "dev"
-
+    - include_role:
+        name: create-user.le
+      when: inventory_hostname['dev'] and item.job == "dev"
 ...
+```
 
 Or, you can select multiple groups
 
+```yaml
 ---
 - name: Create new users
   hosts: all
@@ -100,9 +110,9 @@ Or, you can select multiple groups
     - include_role:
         name: create-user.le
       when: 
-				- inventory_hostname in groups['dev'] or inventory_hostname in groups['webservers']
+ 	- inventory_hostname in groups['dev'] or inventory_hostname in groups['webservers']
 ...
-
+```
 
 ```bash
 [luiz.eduardo@ip-172-31-36-157 ansible]$ ansible-playbook users.yml --vault-password-file=secret
