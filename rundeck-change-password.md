@@ -16,4 +16,4 @@ new_pass: ${option.senha}
 user: ${option.usuario}
 ```
 
-![View](https://i.ibb.co/nDTTHBW/rundeck-change-pass.png)
+![View](https://i.ibb.co/RC11xN5/rundeck-change-pass.png)
