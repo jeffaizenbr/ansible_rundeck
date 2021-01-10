@@ -68,11 +68,11 @@
         path: /opt/wildfly/standalone/configuration/standalone.xml
         backup: yes
         regexp: '127\.0\.0\.1'
-        replace: "{{ ansible_default_ipv4.address }}"
+        replace: "0.0.0.0"
  
-    - name: Criando usuario para acesso a console 
+    - name: Criando usuario para acesso a console wildfly | wildfly
       shell:
-        cmd: JBOSS_HOME='/opt/wildfly' /bin/bash -c '/opt/wildfly/bin/add-user.sh -u wildfly -p admin@wildfly'
+        cmd: JBOSS_HOME='/opt/wildfly' /bin/bash -c '/opt/wildfly/bin/add-user.sh -u wildfly -p wildfly'
       register: wildfly_user
     - debug:
         msg: "{{ wildfly_user }}"
