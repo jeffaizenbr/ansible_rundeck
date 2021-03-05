@@ -9,3 +9,21 @@
               manage_dir: yes
               key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
 #vim:ft=ansible:
+
+
+--------------------------------------------------------
+
+---
+- name: transfer ssh key 
+  hosts: grupo_ 
+  become: true
+  tasks:
+    - authorized_key:
+        user: root 
+        key: "{{lookup,('file','/root/.ssh/id_rsa.pub') }}"
+        state: present
+...
+
+
+
+
