@@ -1,6 +1,8 @@
 
 Criar um JOB no rundeck com os dois workflows abaixo: 
+
 1 - Ansible Playbook Inline Workflow Node Step
+
 2 - Shell script 
 
 ```yaml 
